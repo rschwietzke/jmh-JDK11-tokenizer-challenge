@@ -42,3 +42,28 @@ The tests have been executed with this command line:
 mvn clean compile install
 java -Xms2g -Xmx2g -XX:+UseG1GC -XX:+AlwaysPreTouch -jar target/benchmarks.jar LightStringTokenizerBenchmark
 ```
+
+
+## More results 
+
+### Macbook Pro 15" 2017, MacOS Mojave 10.14.6, 2,8 GHz Intel Core i7 @ 16 GB 2133 MHz LPDDR3, (Power cable attached)
+
+#### JDK 11.0.1, OpenJDK 64-Bit Server VM, 11.0.1+13, 
+
+```
+Benchmark                                                          Mode  Cnt     Score     Error  Units
+LightStringTokenizerBenchmark.cpu_02a_StringTokenizer              avgt   10  1306,780 ±  98,676  ns/op
+LightStringTokenizerBenchmark.cpu_03a_LightTokenizer               avgt   10  1506,114 ± 140,924  ns/op
+LightStringTokenizerBenchmark.cpu_03b_LightTokenizerArray          avgt   10  1055,453 ±  61,357  ns/op
+LightStringTokenizerBenchmark.cpu_03c_LightTokenizerCharDelimiter  avgt   10  1248,843 ±  24,023  ns/op
+```
+
+#### JDK 1.8.0_202, OpenJDK 64-Bit Server VM, 25.202-b08
+
+```
+Benchmark                                                          Mode  Cnt     Score     Error  Units
+LightStringTokenizerBenchmark.cpu_02a_StringTokenizer              avgt   10  1352,127 ±  48,014  ns/op
+LightStringTokenizerBenchmark.cpu_03a_LightTokenizer               avgt   10  1323,923 ±  27,704  ns/op
+LightStringTokenizerBenchmark.cpu_03b_LightTokenizerArray          avgt   10  1240,263 ±  93,318  ns/op
+LightStringTokenizerBenchmark.cpu_03c_LightTokenizerCharDelimiter  avgt   10  1381,135 ± 170,458  ns/op
+```
