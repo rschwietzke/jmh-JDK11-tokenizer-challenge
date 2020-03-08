@@ -1,4 +1,4 @@
-# Hotspot Compiler Difference
+# Hotspot Compiler Difference?
 This test highlights a compiler difference between JDK 8 and JDK 11 that exhibits slower performance with older code.
 
 ## Results
